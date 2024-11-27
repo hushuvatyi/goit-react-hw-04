@@ -1,6 +1,6 @@
-import style from './Button.module.css';
+import style from "./LoadMoreBtn.module.css";
 
-export const Button = ({ children, onClick, disabled }) => {
+export const LoadMoreBtn = ({ children, onClick, disabled }) => {
   return (
     <button className={style.button} onClick={onClick} disabled={disabled}>
       {children}

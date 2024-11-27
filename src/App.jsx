@@ -1,9 +1,9 @@
 import { getPhotos } from "./apiService/photos";
 import {
-  Button,
+  LoadMoreBtn,
   SearchBar,
   Loader,
-  PhotosGallery,
+  ImageGallery,
   Text,
   Section,
   ImageModal,
@@ -82,7 +82,7 @@ export const App = () => {
   useEffect(() => {
     if (page === 1) return;
 
-    ref.current.scrollIntoView({ behavior: "smooth", block: "end" });
+    ref.current.scrollIntoView({ behavior: "auto", block: "end" });
   }, [page, images]);
 
   return (
@@ -90,15 +90,15 @@ export const App = () => {
       <Container ref={ref}>
         <SearchBar onSubmit={handleSubmit} />
         {images.length > 0 && (
-          <PhotosGallery images={images} openModal={openModal} />
+          <ImageGallery images={images} openModal={openModal} />
         )}
         {!images.length && !isEmpty && (
           <Text textAlign="center">Let`s begin search 🔎</Text>
         )}
         {isVisible && !isLoading && images.length > 0 && (
-          <Button onClick={handleLoadMore} disabled={isLoading}>
+          <LoadMoreBtn onClick={handleLoadMore} disabled={isLoading}>
             {isLoading ? "Loading..." : "Load More"}
-          </Button>
+          </LoadMoreBtn>
         )}
 
         {isLoading && <Loader />}

@@ -35,4 +35,4 @@ export const SearchBar = ({ onSubmit }) => {
   );
 };
 
-// export default SearchBar;
+

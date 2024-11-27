@@ -1,7 +1,7 @@
-import { GridItem } from "./../GridItem/GridItem";
-import css from "./PhotosGalleryItem.module.css";
+import { GridItem } from "../GridItem/GridItem";
+import css from "./ImageCard.module.css";
 
-export const PhotosGalleryItem = ({ urls, alt, avg_color, openModal }) => {
+export const ImageCard = ({ urls, alt, avg_color, openModal }) => {
   return (
     <>
       <GridItem>
